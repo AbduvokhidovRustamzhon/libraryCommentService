@@ -1,0 +1,124 @@
+
+POST http://localhost:9999/admins/books/save
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name = "media"; pages = "500"; fileName = "1.pdf
+Content-Type: application/pdf
+
+< ./1.pdf
+
+###
+
+
+
+POST http://localhost:9999/admins/books/save
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name ="media"; pages ="500"; fileName ="1.pdf"
+Content-Type: application/pdf
+
+< ./1.pdf
+
+###
+
+
+POST http://localhost:9999/admin/books/save
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="media"; pages=100; filename="1.pdf"
+Content-Type: application/pdf
+
+< ./1.pdf
+
+
+###
+
+
+
+### Send a form with the text and file fields
+POST http://localhost:9991/api/books/save
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data; name="media"; filename="1.pdf"
+Content-Type: application/pdf
+
+< ./1.pdf
+--WebAppBoundary--
+
+###
+
+POST http://localhost:9991/api/books
+Content-Type: multipart/form-data; boundary=WebAppBoundary
+
+--WebAppBoundary
+Content-Disposition: form-data;
+Content-Type: application/json
+
+
+###daa520
+
+
+POST http://localhost:9991/api/books/remove
+Content-Type: application/json
+
+{
+  "Id":3
+}
+
+
+###
+
+
+
+GET http://localhost:9991/api/books
+
+
+###daa520
+
+
+GET http://localhost:9991/api/books/comment/2
+
+###
+
+
+GET http://localhost:9991/api/books/comment
+Content-Type: application/json
+
+{
+  "BookId": 2
+}
+
+
+###
+
+POST http://localhost:9991/api/books/comment/save
+Content-Type: application/json
+
+
+  {
+    "Comment": "Читацйте эту ",
+    "BookId": 2,
+    "CommentatorName": "Rustamjon"
+  }
+
+
+###
+
+
+POST http://localhost:9991/api/books/comment/remove
+Content-Type: application/json
+
+{
+  "Id": 1
+}
+
+###
+
+
+
+POST http://localhost:9991/api/books/comment/remove/3
+###
